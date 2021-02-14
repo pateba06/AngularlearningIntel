@@ -11,6 +11,7 @@ import { CustomPipe } from './custom.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BootstraplearningComponent } from './bootstraplearning/bootstraplearning.component';
+import { BoottestComponent } from './boottest/boottest.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BootstraplearningComponent } from './bootstraplearning/bootstraplearnin
     EmployeedetailsComponent,
     EmployeelistComponent,
     CustomPipe,
-    BootstraplearningComponent
+    BootstraplearningComponent,
+    BoottestComponent
   ],
   imports: [
     BrowserModule,
