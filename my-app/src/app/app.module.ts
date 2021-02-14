@@ -10,6 +10,7 @@ import { EmployeeserviceService } from './employeeservice.service';
 import { CustomPipe } from './custom.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BootstraplearningComponent } from './bootstraplearning/bootstraplearning.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     HighlightDirective,
     EmployeedetailsComponent,
     EmployeelistComponent,
-    CustomPipe
+    CustomPipe,
+    BootstraplearningComponent
   ],
   imports: [
     BrowserModule,
