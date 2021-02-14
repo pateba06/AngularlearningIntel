@@ -1,0 +1,6 @@
+[{"id":1001, "name":"John" , "salary":45000, "joiningDate": "11/10/1986"},
+   {"id":1002, "name":"Smith" , "salary":25000, "joiningDate": "11/10/1989"},
+   {"id":1003, "name":"Harry" , "salary":55000, "joiningDate": "11/10/1996"},
+   {"id":1004, "name":"Potter" , "salary":35000, "joiningDate": "11/10/1946"},
+   {"id":1004, "name":"badal" , "salary":100000, "joiningDate": "11/10/1988"}
+]

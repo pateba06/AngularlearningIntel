@@ -1,0 +1,21 @@
+<p>employeedetails works!</p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>lowercase</th>
+        <th>UPPERCASE</th>
+        <th>TitleCase</th>
+        <th>JOINING DATE</th>
+        <th>SALARY</th>
+    </tr>
+    <tr *ngFor="let emp of emps">
+        <td>{{emp.id }}</td>
+        <td>{{emp.name  }}</td>
+        <td>{{emp.name | uppercase }}</td>
+        <td>{{emp.name | titlecase }}</td>
+        <td>{{emp.joiningDate | date}}</td>
+        <td>{{emp.salary | custom}}</td>
+    </tr>
+</table>
+
