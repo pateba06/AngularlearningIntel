@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BootstraplearningComponent } from './bootstraplearning/bootstraplearning.component';
 import { BoottestComponent } from './boottest/boottest.component';
+import { StudenttdfComponent } from './studenttdf/studenttdf.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BoottestComponent } from './boottest/boottest.component';
     EmployeelistComponent,
     CustomPipe,
     BootstraplearningComponent,
-    BoottestComponent
+    BoottestComponent,
+    StudenttdfComponent
   ],
   imports: [
     BrowserModule,
