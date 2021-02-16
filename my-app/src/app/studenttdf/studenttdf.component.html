@@ -3,35 +3,44 @@
 <!-- Template Driver form-->
 <div class="container">
     <form #StudentForm="ngForm"> 
+        using model: 
+        {{student| json}}
+        <hr>
+        Using data to ngForm
+        {{StudentForm.value | json}}
+        <hr>
       <!--we will create vertical form-->  
         <div class="form-group">
             <label >Student Name</label>
-            <input type="text" ngModel name="studentName" placeholder="Please enter name" class="form-control">
+            <!--#studentName we used below to see the class name for validation-->
+            <input type="text" #studentName [(ngModel)]=student.name name="studentName" 
+            placeholder="Please enter name" class="form-control">
         </div>
+          <!--to see the validation-->  
+        {{studentName.className}}
         <div class="form-group">
             <label >Email</label>
-            <input type="email"ngModel name="studentEmail" placeholder="Please enter your email Id" class="form-control">
+            <input type="email" [(ngModel)]=student.email name="studentEmail" placeholder="Please enter your email Id" class="form-control">
         </div>
                <!-- we will use *ngFor to fetch the list from array -->
-       <select class="custom-select" ngModel name="studentSubject"> 
+       <select class="custom-select" [(ngModel)]=student.subject name="studentSubject"> 
            <option *ngFor="let subject of subjects">{{subject}}</option>
        </select >
        <br>
         <!-- we will creagte radio button -->
         <div class="form-group">
             <label>Gender</label>
-            <input type="radio" ngModel name ="gender" value="M"/> Male
-            <input type="radio"  ngModel  name ="gender" value="f"/> female
+            <input type="radio" [(ngModel)]=student.gender name ="gender" value="M"/> Male
+            <input type="radio"  [(ngModel)]=student.gender  name ="gender" value="f"/> female
         </div>
         <div> 
         <label>Cities Lived In</label>
-        <input type="checkbox"  ngModel  name="city1" value="flr"/>Florida
-        <input type="checkbox" ngModel  name="city2" value="ken"/>Kentucky
-        <input type="checkbox" ngModel  name="city3" value="con"/>Conneticut
+        <input type="checkbox"  [(ngModel)]=student.city1  name="city1" value="flr"/>Florida
+        <input type="checkbox" [(ngModel)]=student.city2 name="city2" value="ken"/>Kentucky
+        <input type="checkbox" [(ngModel)]=student.city3  name="city3" value="con"/>Conneticut
         </div>
         <button class="btn btn-primary"> submit</button> 
     </form>
 
 </div>
 
-{{StudentForm.value | json}}
