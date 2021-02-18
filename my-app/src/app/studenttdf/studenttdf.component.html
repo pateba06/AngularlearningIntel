@@ -1,31 +1,39 @@
 <p>studenttdf : Template Driven Form</p>
 
 <!-- Template Driver form-->
-<div class="container">
-    <form #StudentForm="ngForm"> 
-        using model: 
+<div class="container" *ngIf=!submitted>
+    <form #StudentForm="ngForm" (ngSubmit)="submitForm()"> 
+        <hr>
+      {{StudentForm.form.valid}}
+      <hr>
+        <!-- using model: 
         {{student| json}}
         <hr>
         Using data to ngForm
         {{StudentForm.value | json}}
-        <hr>
+        <hr> -->
       <!--we will create vertical form-->  
         <div class="form-group">
             <label >Student Name</label>
             <!--#studentName we used below to see the class name for validation-->
-            <input type="text" #studentName [(ngModel)]=student.name name="studentName" 
+            <input type="text" required #studentName=ngModel pattern="[A-Za-z]{6}" [(ngModel)]=student.name name="studentName" 
             placeholder="Please enter name" class="form-control">
         </div>
-          <!--to see the validation-->  
-        {{studentName.className}}
+        <div *ngIf="studentName.invalid"> Name Can Only have Characters</div> 
+        <!-- <div *ngIf="studentName.invalid"> Name Is Required</div> --> 
+        <!-- <div *ngIf="studentName.invalid" class="alert alert-danger"> Name Is Required</div> -->
+         <!--to see the validation-->  
+        <!-- {{studentName.invalid}} -->
         <div class="form-group">
             <label >Email</label>
-            <input type="email" [(ngModel)]=student.email name="studentEmail" placeholder="Please enter your email Id" class="form-control">
+            <input type="email" required #studentEmail=ngModel [(ngModel)]=student.email name="studentEmail" placeholder="Please enter your email Id" class="form-control">
         </div>
+        <!-- {{studentEmail.invalid}} -->
                <!-- we will use *ngFor to fetch the list from array -->
-       <select class="custom-select" [(ngModel)]=student.subject name="studentSubject"> 
+       <select class="custom-select"  #subject=ngModel [(ngModel)]=student.subject name="studentSubject"> 
            <option *ngFor="let subject of subjects">{{subject}}</option>
        </select >
+       {{subject.value}}
        <br>
         <!-- we will creagte radio button -->
         <div class="form-group">
@@ -39,8 +47,8 @@
         <input type="checkbox" [(ngModel)]=student.city2 name="city2" value="ken"/>Kentucky
         <input type="checkbox" [(ngModel)]=student.city3  name="city3" value="con"/>Conneticut
         </div>
-        <button class="btn btn-primary"> submit</button> 
+        <button class="btn btn-primary" [disabled]=StudentForm.form.invalid> submit</button> 
     </form>
-
+   <div *ngIf=submitted>Form submited</div>
 </div>
 

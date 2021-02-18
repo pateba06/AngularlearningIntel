@@ -1,0 +1,10 @@
+/* input[type=text]{
+    background-color: red;
+} */
+
+input[type=text].ng-valid{
+    border:solid green;
+}
+input[type=text].ng-invalid{
+    border:solid red;
+}

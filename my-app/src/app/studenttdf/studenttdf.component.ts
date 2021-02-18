@@ -16,4 +16,10 @@ export class StudenttdfComponent implements OnInit {
   student= new Students("badal", "badlarpatel@gmail.com", "Hindi","M",true,false,true);
   // We define array. so this value we will show in drop down menu
  subjects=["English","Hindi","Spanish","Russian","Japanese"];
+
+ submitted:boolean=false;
+ submitForm(){
+   this.submitted=true;
+   console.log(this.student);
+}
 }
