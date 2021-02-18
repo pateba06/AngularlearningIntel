@@ -1,7 +1,7 @@
-<p>studenttdf : Template Driven Form</p>
+<p>studenttdf : Template Driven Form --until Form validation</p>
 
 <!-- Template Driver form-->
-<div class="container" *ngIf=!submitted>
+<div class="container" >
     <form #StudentForm="ngForm" (ngSubmit)="submitForm()"> 
         <hr>
       {{StudentForm.form.valid}}
